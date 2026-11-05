@@ -6,8 +6,20 @@ header,main,footer{max-width:720px;margin:0 auto;padding:12px 16px}
 header{display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap}
 #stats{color:var(--mut);font-size:14px}
 select,button,.btn{font:inherit;color:inherit;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:8px 12px;cursor:pointer}
-h2{font-size:18px;line-height:1.4;margin:12px 0}
-.case{white-space:pre-wrap;border-left:3px solid var(--acc);padding:4px 12px;color:var(--mut);margin-bottom:8px}
+.q{font-size:17px;line-height:1.5;margin:12px 0}
+.case{border-left:3px solid var(--acc);padding:4px 12px;color:var(--mut);margin-bottom:8px;font-size:14px}
+.case summary{cursor:pointer;font-weight:600;color:var(--fg)}
+.case h4{margin:12px 0 4px}
+table.t{border-collapse:collapse;margin:8px 0;font-size:14px;max-width:100%;display:block;overflow-x:auto}
+table.t th,table.t td{border:1px solid var(--line);padding:4px 8px;text-align:left}
+table.t th{background:var(--selbg)}
+.exhibit{border:1px solid var(--line);border-radius:6px;padding:8px 12px;margin:8px 0;font-size:14px;background:var(--selbg)}
+.pre{white-space:pre-wrap}
+.aviso{margin-top:8px;padding:10px 12px;border:1px solid var(--bad);border-radius:6px;background:var(--badbg);font-size:14px}
+.slot label{display:flex;gap:8px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+.slot select{max-width:100%}
+.row2{display:flex;gap:8px;margin-top:12px}.row2 .opt{margin:0;text-align:center}
+pre{white-space:pre-wrap;overflow-x:auto;background:var(--selbg);padding:8px;border-radius:6px}
 .hint{color:var(--mut);font-size:14px;margin:0 0 8px}
 .opt{display:block;width:100%;text-align:left;margin:8px 0}
 .opt.sel{border-color:var(--acc);background:var(--selbg)}
