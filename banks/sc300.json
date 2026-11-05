@@ -1,0 +1,40 @@
+{
+  "cases": {
+    "contoso": "Contoso Ltd. possui um tenant Microsoft Entra ID com 5.000 usuários.\nA empresa quer que os gerentes revisem trimestralmente o acesso de convidados externos aos grupos do Microsoft 365."
+  },
+  "questions": [
+    {
+      "id": "q001", "type": "single",
+      "question": "Qual recurso do Microsoft Entra ID concede acesso just-in-time a funções privilegiadas?",
+      "options": ["Conditional Access", "Privileged Identity Management", "Identity Protection", "Access reviews"],
+      "answer": [1],
+      "explanation": "O PIM permite ativação temporária e com aprovação de funções privilegiadas."
+    },
+    {
+      "id": "q002", "type": "multiple",
+      "question": "Quais métodos permitem autenticação sem senha no Microsoft Entra ID?",
+      "options": ["Windows Hello for Business", "Chave de segurança FIDO2", "Perguntas de segurança", "Senha de aplicativo"],
+      "answer": [0, 1],
+      "explanation": "Windows Hello e FIDO2 são métodos sem senha. Perguntas de segurança servem só para SSPR."
+    },
+    {
+      "id": "q003", "type": "dragdrop",
+      "question": "Associe cada recurso à sua finalidade.",
+      "items": ["Conditional Access", "Identity Protection", "Access reviews"],
+      "targets": [
+        "Recertificar periodicamente o acesso de usuários a grupos",
+        "Exigir MFA conforme local e dispositivo",
+        "Detectar contas com risco de comprometimento"
+      ],
+      "answer": [2, 0, 1],
+      "explanation": "Access reviews recertificam acesso; Conditional Access aplica políticas; Identity Protection detecta risco."
+    },
+    {
+      "id": "q004", "type": "single", "case": "contoso",
+      "question": "Qual recurso você deve configurar para atender ao requisito da Contoso?",
+      "options": ["Access reviews", "Terms of use", "Named locations", "Administrative units"],
+      "answer": [0],
+      "explanation": "Access reviews permitem revisões recorrentes feitas pelos gerentes."
+    }
+  ]
+}
