@@ -1,0 +1,4 @@
+# imagens originais e saída bruta do OCR (não publicar)
+imagens/
+saida/
+__pycache__/
