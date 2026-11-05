@@ -117,15 +117,15 @@ function render() {
     h += `<p class="hint">Questão de laboratório: faça no portal, depois confira a solução e diga se acertou.</p>`;
   } else {
     if (q.type === 'multiple') h += `<p class="hint">Escolha ${q.answer.length}.</p>`;
-    h += q.options.map((o, i) => {
-      let c = sel.includes(i) ? ' sel' : '';
-      if (done) c = q.answer.includes(i) ? ' right' : sel.includes(i) ? ' wrong' : '';
-      return `<button class="opt${c}" data-i="${i}">${esc(o)}</button>`;
-    }).join('');
+    h += `<div class="opts${q.type === 'multiple' ? ' multi' : ''}">` + q.options.map((o, i) => {
+      let c = sel.includes(i) ? ' sel' : '', k = String.fromCharCode(65 + i);
+      if (done) { c = q.answer.includes(i) ? ' right' : sel.includes(i) ? ' wrong' : ''; k = c === ' right' ? '✓' : c === ' wrong' ? '✕' : k; }
+      return `<button class="opt${c}" data-i="${i}"><span class="k">${k}</span>${esc(o)}</button>`;
+    }).join('') + '</div>';
   }
   const ex = q.explanation ? (isHtml(q.explanation) ? q.explanation : `<span class="pre">${esc(q.explanation)}</span>`) : '';
   if (done || (q.type === 'lab' && revealed)) {
-    h += `<div class="explain">${done ? `<b>${ok ? 'Correto' : 'Incorreto'}.</b> ` : ''}${ex}`;
+    h += `<div class="explain${done && !ok ? ' bad' : ''}">${done ? `<b>${ok ? 'Correto' : 'Incorreto'}.</b> ` : ''}${ex}`;
     if (q.fonte) h += `<div class="hint">${esc(q.fonte)}</div>`;
     h += `</div>`;
     if (q.aviso) h += `<div class="aviso"><b>Atenção:</b> ${esc(q.aviso)}</div>`;
